@@ -1,0 +1,80 @@
+.row-top > div {
+    height: calc(100vh - 95px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages-list, .users-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.messages-list li {
+    padding: 0.5rem 0.75rem;
+}
+
+.messages-list li:not(.alert):nth-child(odd) {
+    background: #eee;
+}
+
+.users-list-wrapper {
+    position: relative;
+    padding-left: .5rem;
+}
+
+.users-list-wrapper button,
+.users-list-wrapper button:focus,
+.users-list-wrapper button:active {
+    box-shadow: none;
+    outline: none;
+}
+
+.users-list-wrapper button::before,
+.users-list-wrapper button::after {
+    font-size: 1em;
+    display: inline;
+    vertical-align: baseline;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.users-list-wrapper button.arrow-left::before {
+    content: '\2039';
+}
+
+.users-list-wrapper button.arrow-right::after {
+    content: '\203A';
+}
+
+.users-list {
+    width: 200px; 
+    overflow-x: hidden;
+    opacity: 1;
+    transition: width .3s;
+}
+
+.users-list.collapsed {
+    width: 1px;
+    opacity: 0;
+    padding: 0;
+}
+
+.users-list li {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.users-list li::before {
+    content: url(user.svg);
+    display: inline;
+    vertical-align: middle;
+}
+
+textarea {
+    resize: none;
+}
